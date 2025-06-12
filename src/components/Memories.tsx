@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Memories() {
+function Memories(): JSX.Element {
     return (
     <div id="memories">
-        <h2 class="memory-title">Memories</h2>
-        <div class="galleries">
-            <p class="gallery-title">Mirror Moments</p>
-            <div class="pic-gallery">
+        <h2 className="memory-title">Memories</h2>
+        <div className="galleries">
+            <p className="gallery-title">Mirror Moments</p>
+            <div className="pic-gallery">
                 <img src="./images/mirror-gallery/mirror01.jpeg" alt="Mirror 1" />
                 <img src="./images/mirror-gallery/mirror02.jpeg" alt="Mirror 2" />
                 <img src="./images/mirror-gallery/mirror03.jpeg" alt="Mirror 3" />
@@ -29,9 +29,9 @@ function Memories() {
         </div>
 
 
-        <div class="galleries">
-            <p class="gallery-title">Cutest Moments</p>
-            <div class="pic-gallery">
+        <div className="galleries">
+            <p className="gallery-title">Cutest Moments</p>
+            <div className="pic-gallery">
                 <img src="./images/cute-gallery/cute01.jpg" alt="Cute 1" />
                 <img src="./images/cute-gallery/cute02.jpg" alt="Cute 2" />
                 <img src="./images/cute-gallery/cute03.jpg" alt="Cute 3" />

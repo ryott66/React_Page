@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 
 
-function App() {
+function App(): JSX.Element {
   return (
     <>
       <Header />

@@ -1,14 +1,20 @@
 import { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
+import { TimeLeft } from "../types"
 
 // const birthday = new Date(2025, 5, 12); // 2025年6月12日（JST）
-const birthday = new Date("2025-06-28T00:00:00"); //日本時間
 
 
-function MainSection() {
-  const [timeLeft, setTimeLeft] = useState(null);
-  const [isBirthdayToday, setIsBirthdayToday] = useState(false);
-  const [celebrated, setCelebrated] = useState(false);
+const birthday: Date = new Date("2025-06-28T00:00:00");  //日本時間
+// const birthday = new Date("2025-06-28T00:00:00"); //JSX
+
+
+function MainSection(): JSX.Element {
+
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(null);
+  const [isBirthdayToday, setIsBirthdayToday] = useState<boolean>(false);
+  const [celebrated, setCelebrated] = useState<boolean>(false);
+
 
   function launchConfetti() {
     confetti({ particleCount: 300, angle: 60, spread: 100, origin: { x: 0, y: 0.5 }, colors: ['#ff69b4', '#ffd700', '#87cefa'] });
@@ -18,13 +24,14 @@ function MainSection() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const now = new Date();
+      const now: Date = new Date();
 
       const isToday = (
         now.getFullYear() === birthday.getFullYear() &&
         now.getMonth() === birthday.getMonth() &&
         now.getDate() === birthday.getDate()
       );
+
 
       if (isToday) {
         setIsBirthdayToday(true);
@@ -33,10 +40,11 @@ function MainSection() {
           launchConfetti();
           setCelebrated(true);
         }
+        //当日だったらカウントダウン（1秒ごとのsetInterval）から抜けていい
         return;
       }
 
-      const diff = birthday - now;
+      const diff: number = birthday.getTime() - now.getTime();
       if (diff > 0) {
         const totalSeconds = Math.floor(diff / 1000);
         const days = Math.floor(totalSeconds / (60 * 60 * 24));
@@ -45,13 +53,14 @@ function MainSection() {
         const seconds = totalSeconds % 60;
 
         setTimeLeft({ days, hours, minutes, seconds });
+        //setTimeLeft({ days: days, hours: hours, minutes: minutes, seconds: seconds });  これと同じ意味！！
       } else {
         setTimeLeft(null);
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [celebrated]);
+  }, [celebrated]);  //useEffectの第二引数は、依存値。その値が変化したら再実行
 
   return (
     <div className="main">
@@ -73,7 +82,7 @@ function MainSection() {
               {String(timeLeft.seconds).padStart(2, '0')}
             </span>
           </>
-        ) : null}
+        ) : <>読み込み中</>}
       </div>
     </div>
   );

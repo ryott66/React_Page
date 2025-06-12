@@ -252,6 +252,7 @@ footer {
 
 #heart {
     transition: transform 0.2s ease, color 0.2s ease;
+    cursor:pointer;
 }
 
 #heart.bigheart {
