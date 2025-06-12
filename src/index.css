@@ -1,0 +1,277 @@
+/* html {
+    scroll-behavior: smooth;
+} */
+
+/* 
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+文字サイズをremにしておけば、HTMLのフォントサイズに合わせて小さくなる
+⇒html font-sizeが、画面幅によって変わるようにすればOK
+制作画面（PC大画面）の画面幅は1280pxで、HTML16pxで設定されてるから、
+HTML font-sizeは、画面に対して16/1280=1.25%になるようにすればイメージからずれない
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+*/
+
+html {
+    font-size: clamp(2px, 1.25vw, 16px);  /*clamp(最小, 画面に対する%, 最大)*/
+}
+
+
+body {
+    background-color: #fff0f5;
+    font-family: sans-serif;
+    margin: 0;
+    padding-top: 0rem;
+    /* fixed headerのため */
+    overflow-x: hidden;
+    /* 横スクロールを防止 */
+
+}
+
+header {
+    height: 5rem;
+    width: 100%;
+    background-color: rgba(207, 220, 231, 0.4);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    /*z軸方向、図の重なりを制御。整数値で大きければ上にくる*/
+}
+
+.header-btn {
+    font-size: 2rem;
+    font-family: 'Dancing Script', sans-serif;
+    float: left;
+    margin: 0.7rem 2.5rem;
+    padding: 0.7rem 2rem;
+    background-color: rgb(229, 166, 220, 0.7);
+    color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem #cbcbcb;
+}
+
+.header-btn:active {
+    position: relative;
+    top: 0.3rem;
+    box-shadow: none;
+}
+
+.header-btn:hover {
+    background-color: rgb(229, 166, 220, 0.82);
+}
+
+.header-left {
+    float: left;
+    margin: 0 4rem;
+}
+
+/* .header-btn{
+    margin-left:8rem;
+} */
+
+.header-right {
+    float: left;
+    transition: all 0.5s;
+    /*hoverしたときとかに状態が変わるための時間*/
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+.header-right a {
+    color: #e68ab6;
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.cake-icon {
+    font-size: 4rem;
+    /* 大きさ */
+    color: #e2a8c4;
+    /* ピンク */
+    margin: 0.7rem 0;
+}
+
+
+.main {
+    height: auto;
+    width: 100%;
+    margin-top: 5rem;
+    background-image: url("/images/background_main.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+}
+
+#first {
+    font-size: 8rem;
+    font-family: 'Dancing Script', sans-serif;
+    letter-spacing: 0.8rem;
+    color: rgb(241, 230, 238);
+    opacity: 0.9;
+    padding: 3rem 0 8rem 0;
+
+}
+
+#countdown {
+    padding: 3rem 0;
+    font-size: 6rem;
+    font-family: 'Dancing Script', sans-serif;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgb(200, 247, 255);
+    opacity: 0.9;
+    letter-spacing: 0.1rem;
+}
+
+.cdtime {
+    font-family: sans-serif;
+    font-size: 4rem;
+
+}
+
+.birthday-script {
+    font-size: 8rem;
+    font-weight: 1000;
+    color: rgb(200, 247, 255);
+}
+
+.birthday-num {
+    font-family: "HappyBirthday";
+    font-size: 12rem;
+    font-weight: 100;
+    color: rgb(200, 247, 255);
+
+    /* color: #2f7a91; */
+}
+
+#memories {
+    padding: 5rem 0 8rem 0; 
+    height: auto;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.memory-title {
+    font-family: 'Dancing Script', cursive;
+    color: rgb(230, 138, 182, 0.8);
+    font-size: 5rem;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+
+}
+
+.galleries {
+    background: linear-gradient(90deg, #b39855 0%, #fff9e6 50%, #b39855 100%);
+    border: 0.7rem solid #c9c9c9;
+    /* 太さ2px、実線、色は濃いグレー */
+    padding: 1rem 1rem 3rem 1rem;
+    margin-bottom: 8rem;
+}
+
+.gallery-title {
+    font-size: 3rem;
+    font-family: 'Kaushan Script', cursive;
+    color: rgb(167, 167, 167);
+}
+
+.pic-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.pic-gallery img {
+    height: 20rem;
+    border: 0.25rem solid rgb(128, 128, 128);
+    border-radius: 1rem;
+    scroll-snap-align: start;
+}
+
+#trip {
+    height: 50rem;
+    margin: 0rem;
+    background-image: url("./images/background_trip.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color:rgba(200, 254, 228, 0.7); */
+}
+
+.trip-title {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
+    /* colors: rgba(255, 255, 255, 0.9); */
+    color: rgba(0, 0, 0, 0.8);
+    padding-top: 6rem;
+}
+
+.trip-message {
+    text-align: center;
+    font-style: italic;
+    font-family: 'Dancing Script', cursive;
+    margin: 0 8rem;
+    padding: 2rem;
+    line-height: 1.8;
+}
+
+.coming-soon {
+    font-size: 5rem;
+    color: rgba(0, 0, 0, 0.8);
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+footer {
+    height: 12rem;
+    padding-top: 3rem;
+
+}
+
+.footer-left {
+    font-size: 5rem;
+    color: rgb(249, 119, 156);
+    margin-left: 5rem;
+    float: left;
+
+}
+
+#heart {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#heart.bigheart {
+    color: rgb(246, 73, 128);
+    transform: scale(1.1);
+}
+
+.footer-right {
+    font-size: 2.5rem;
+    padding-top: 2rem;
+    padding-left: 5rem;
+    float: left;
+    color: rgb(254, 139, 181);
+
+}
+
+.footer-end {
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+    margin-top: 7rem;
+    margin-right: 3rem;
+    float: right;
+}
