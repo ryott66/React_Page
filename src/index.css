@@ -194,7 +194,7 @@ header {
 #trip {
     height: 50rem;
     margin: 0rem;
-    background-image: url("./images/background_trip.png");
+    background-image: url("/images/background_trip.png");
     background-size: cover;
     background-repeat: no-repeat;
     /* background-color:rgba(200, 254, 228, 0.7); */
