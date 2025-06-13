@@ -1,27 +1,10 @@
 // import { useEffect, useRef } from 'react';
 import { useRef, useState } from 'react';
+import { handleButtonClick } from "../utils/handleButtonClick";
 
 function Footer(): JSX.Element {
   const [animating, setAnimating] = useState(false);  //animation中の多重クリック防止
-  const heartRef = useRef<HTMLElement>(null); // i 要素を参照
-
-  const handleHeartClick = () => {
-    if (animating || !heartRef.current) return; //pass
-
-    setAnimating(true);
-    heartRef.current.classList.add("bigheart");
-    setTimeout(() => heartRef.current?.classList.remove("bigheart"), 200);
-
-    const stopId = setInterval(() => {
-      heartRef.current?.classList.add("bigheart");
-      setTimeout(() => heartRef.current?.classList.remove("bigheart"), 200);
-    }, 600);
-
-    setTimeout(() => {
-      clearInterval(stopId);
-      setAnimating(false);
-    }, 1200);
-  };
+  const heartRef = useRef<HTMLElement>(null); // i 要素を参照（.currentでDOM取得）
 
   return (
     <footer>
@@ -30,7 +13,7 @@ function Footer(): JSX.Element {
           id = "heart"
           ref={heartRef}
           className="fa-solid fa-heart"
-          onClick={handleHeartClick}
+          onClick= {() => handleButtonClick(heartRef.current, setAnimating, animating, "bigheart")}
         ></i>
       </div>
       <div className="footer-right">

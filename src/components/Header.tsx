@@ -1,6 +1,11 @@
 import React from 'react';
+import { useRef, useState } from 'react';
+import { handleButtonClick } from "../utils/handleButtonClick";
 
 function Header(): JSX.Element {
+  const [animating, setAnimating] = useState(false);
+  const cakeref = useRef<HTMLElement>(null)
+
 
   const handleSmoothMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -34,12 +39,11 @@ function Header(): JSX.Element {
   };
 
 
-
   return (
 
     <header>
       <div className="header-left">
-        <a href="#first" className="fa-solid fa-cake-candles cake-icon" onClick={handleSmoothMove}></a>
+        <i ref={cakeref} id="cake" className="fa-solid fa-cake-candles" onClick={()=>handleButtonClick(cakeref.current, setAnimating, animating, "bigcake")}></i>
       </div>
       <nav>
         <a href="#countdown" className="header-btn" onClick={handleSmoothMove}>Countdown</a>

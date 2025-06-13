@@ -83,12 +83,23 @@ header {
     opacity: 0.8;
 }
 
-.cake-icon {
+/* .cake-icon {
     font-size: 4rem;
-    /* 大きさ */
     color: #e2a8c4;
-    /* ピンク */
     margin: 0.7rem 0;
+} */
+
+#cake {
+    font-size: 4rem;
+    color: #e2a8c4;
+    margin: 0.7rem 0;
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor:pointer;
+}
+
+#cake.bigcake {
+    color: rgb(252, 127, 167);
+    transform: scale(1.1);
 }
 
 
