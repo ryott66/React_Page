@@ -77,6 +77,7 @@ header {
 }
 
 .header-right a {
+    margin-left:6rem;
     color: #e68ab6;
     font-size: 2rem;
     font-weight: bold;
@@ -120,7 +121,7 @@ header {
     letter-spacing: 0.8rem;
     color: rgb(241, 230, 238);
     opacity: 0.9;
-    padding: 3rem 0 8rem 0;
+    padding: 3rem 0 8rem 0rem;
 
 }
 

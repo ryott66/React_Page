@@ -5,7 +5,7 @@ import { TimeLeft } from "../types"
 // const birthday = new Date(2025, 5, 12); // 2025年6月12日（JST）
 
 
-const birthday: Date = new Date("2025-06-28T00:00:00");  //日本時間
+const birthday: Date = new Date("2026-06-28T00:00:00");  //日本時間
 // const birthday = new Date("2025-06-28T00:00:00"); //JSX
 
 
