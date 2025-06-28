@@ -17,7 +17,7 @@ function Footer(): JSX.Element {
         ></i>
       </div>
       <div className="footer-right">
-        大好きなれみちゃん、いつもありがとう😄
+        いつもありがとう😄
       </div>
       <p className="footer-end">Created by Ryo</p>
     </footer>

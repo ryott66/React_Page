@@ -14,7 +14,8 @@
   "dependencies": {
     "canvas-confetti": "^1.9.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-pageflip": "^2.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

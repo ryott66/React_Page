@@ -156,6 +156,30 @@ header {
     /* color: #2f7a91; */
 }
 
+#book-section {
+    width:100%;
+    height:60rem;
+    background-color:#f9f0d7;
+    text-align:center;
+}
+
+
+.book {
+    margin: 0 auto;
+    /* background-color:#dbb659; */
+
+    /* border: solid 1rem rgb(100, 55, 3); */
+}
+
+.booksection-title {
+    font-family: 'Dancing Script', cursive;
+    color: rgb(230, 138, 182, 0.8);
+    font-size: 5rem;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+
+}
+
 #memories {
     padding: 5rem 0 8rem 0; 
     height: auto;
