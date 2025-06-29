@@ -4,9 +4,9 @@ import React from 'react';
 function TripSection() :JSX.Element{
     return (
         <div id="trip">
-            <h2 className="trip-title">Date<br/>6/26~6/27</h2>
+            <h2 className="trip-title">Karuizawa<br/>6/26~6/27</h2>
             <div className="trip-message">
-                <p className="coming-soon">Coming soon...</p>
+                <p>Thank you</p>
             </div>
         </div>
 
